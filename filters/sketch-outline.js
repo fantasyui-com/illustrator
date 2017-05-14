@@ -2,10 +2,13 @@ const fs = require('fs');
 const gm = require('gm');
 const path = require('path');
 
+const tmp = require('tmp');
+
 module.exports = function (location){
   let dirname = path.dirname(location)
   let basename = path.basename(location)
-  let newpath = path.join(dirname, path.basename(__filename, '.js') + '.' + basename );
+  let newpath = tmp.fileSync({postfix:path.extname(basename)}).name;
+
   return new Promise(function (resolve, reject){
     gm(location)
       .noProfile()
@@ -22,7 +25,7 @@ module.exports = function (location){
 
       .level('2%',0.2,'98%')
 
- 
+ .contrast(4)
 
       .write(newpath, function (err) {
         if (err) {
