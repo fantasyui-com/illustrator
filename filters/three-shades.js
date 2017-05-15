@@ -12,13 +12,15 @@ module.exports = function (location){
   return new Promise(function (resolve, reject){
     gm(location)
       .noProfile()
+      .normalize()
+      .equalize()
 
-      .normalize()
-      .negative()
-      .median(4)
-      .charcoal(3)
-      .normalize()
-      .contrast(-4)
+      .modulate("150%")
+      .median(2)
+      .fill("white").colorize("25%")
+
+      .dither(false)
+      .colors(3)
 
       .font("Helvetica.ttf") .fontSize(14) .stroke("#000", 2) .fill("#000") .drawText(10, 24, path.basename(__filename, path.extname(__filename)).replace(/-/g,' ').toUpperCase() )
       .write(newpath, function (err) {

@@ -20,8 +20,9 @@ module.exports = function (location){
       .fill("white").colorize("25%")
 
       .dither(false)
-      .colors(8)
+      .colors(5)
 
+      .font("Helvetica.ttf") .fontSize(14) .stroke("#000", 2) .fill("#000") .drawText(10, 24, path.basename(__filename, path.extname(__filename)).replace(/-/g,' ').toUpperCase() )
       .write(newpath, function (err) {
         if (err) {
           console.error(err);

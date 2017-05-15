@@ -11,22 +11,16 @@ module.exports = function (location){
 
   return new Promise(function (resolve, reject){
     gm(location)
+
       .noProfile()
       .type('Grayscale')
-      .normalize()
+
       .fill("white").colorize("30%")
+      .blur(2) .median(2) .blur(2)
 
-      .colors(16)
-      .blur(3)
-      .median(2)
-      .blur(2)
-      .negative().edge(1).negative()
-      .level('1%',0.05,'99%')
+      .negative().edge(1).negative().level('1%',0.05,'99%').level('2%',0.2,'98%').contrast(3)
 
-      .level('2%',0.2,'98%')
-
- .contrast(4)
-
+      .font("Helvetica.ttf") .fontSize(14) .stroke("#000", 2) .fill("#000") .drawText(10, 24, path.basename(__filename, path.extname(__filename)).replace(/-/g,' ').toUpperCase() )
       .write(newpath, function (err) {
         if (err) {
           console.error(err);

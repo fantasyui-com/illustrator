@@ -14,11 +14,13 @@ module.exports = function (location){
       .noProfile()
 
 
+      .blur(3)
       .median(3)
       .normalize()
-      .contrast(-10)
+      .contrast(-8)
       .fill("white").colorize("46%")
 
+      .font("Helvetica.ttf") .fontSize(14) .stroke("#000", 2) .fill("#000") .drawText(10, 24, path.basename(__filename, path.extname(__filename)).replace(/-/g,' ').toUpperCase() )
       .write(newpath, function (err) {
         if (err) {
           console.error(err);
