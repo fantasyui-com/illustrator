@@ -61,3 +61,16 @@ illustrator --album samples --unpdf sketch ./samples/a.jpg ./samples/b.jpg
 illustrator --album la-joconde sketch ./samples/a.jpg
 
 ```
+
+## Next Steps
+
+You will need [Drawing Pencils](https://duckduckgo.com/?q=Drawing+Pencils), [Graphite Paper](https://duckduckgo.com/?q=Graphite+Paper), [Drawing Paper](https://duckduckgo.com/?q=Drawing+Paper), Patience, Love, and, somebody to Love.
+
+Remember,
+
+>  Any time ya learn, ya gain.
+>
+>   -- Bob Ross
+
+Love,
+Dr. M.
