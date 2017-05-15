@@ -7,6 +7,7 @@
     "illustrator": "./index.js"
   },
   "scripts": {
+    "samples": "node index.js --album samples --unpdf sketch ./samples/a.jpg ./samples/b.jpg",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,8 @@
   "homepage": "https://github.com/fantasyui-com/illustrator#readme",
   "dependencies": {
     "commander": "^2.9.0",
-    "gm": "^1.23.0"
+    "gm": "^1.23.0",
+    "make-dir": "^1.0.0",
+    "tmp": "0.0.31"
   }
 }
