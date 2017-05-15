@@ -35,8 +35,10 @@ Click [Single Image PDF](https://github.com/fantasyui-com/illustrator/blob/maste
 
 ```bash
 
+brew install ghostscript
 brew install imagemagick;
 brew install graphicsmagick;
+
 npm install -g illustrator;
 
 ```
@@ -73,4 +75,5 @@ Remember,
 >   -- Bob Ross
 
 Love,
+
 Dr. M.
