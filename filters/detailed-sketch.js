@@ -12,7 +12,8 @@ module.exports = function (location){
     const setup = [
       location,
        "-blur", "5",
-       "-scale", "400%",
+       // "-scale", "400%",
+       "-resize", "2000x3000^",
        //"-median", "8",
        "+dither",
        "-posterize", "16",
