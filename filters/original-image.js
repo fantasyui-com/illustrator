@@ -11,11 +11,13 @@ module.exports = function (location){
 
   return new Promise(function (resolve, reject){
     gm(location)
+    .autoOrient().resize(2000, 1000) // fit the image into these
       .noProfile()
+
+
       .normalize()
       .median(1)
 
-      .font("Helvetica.ttf") .fontSize(14) .stroke("#000", 2) .fill("#000") .drawText(10, 24, path.basename(__filename, path.extname(__filename)).replace(/-/g,' ').toUpperCase() )
       .write(newpath, function (err) {
         if (err) {
           console.error(err);

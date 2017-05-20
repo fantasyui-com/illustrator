@@ -11,6 +11,8 @@ module.exports = function (location){
 
   return new Promise(function (resolve, reject){
     gm(location)
+    .autoOrient().resize(2000, 1000) // fit the image into these
+
 
       .noProfile()
       .type('Grayscale')
@@ -20,7 +22,6 @@ module.exports = function (location){
 
       .negative().edge(1).negative().level('1%',0.05,'99%').level('2%',0.2,'98%').contrast(3)
 
-      .font("Helvetica.ttf") .fontSize(14) .stroke("#000", 2) .fill("#000") .drawText(10, 24, path.basename(__filename, path.extname(__filename)).replace(/-/g,' ').toUpperCase() )
       .write(newpath, function (err) {
         if (err) {
           console.error(err);

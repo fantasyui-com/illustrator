@@ -18,21 +18,19 @@ async function main(files){
 
   let chain = Promise.resolve();
   files.forEach(function (file) {
+
     const fullPath = path.resolve(file);
 
     chain = chain.then(()=>{if(program.verbose) console.log(`Processing: ${fullPath}`)} )
 
     chain = chain.then(()=>filter("original-image")(fullPath)).then(source => album.data.push({name:path.basename(file,path.extname(file)), source}))
     chain = chain.then(()=>filter("charcoal-drawing")(fullPath)).then(source => album.data.push({name:path.basename(file,path.extname(file)), source}))
-
     chain = chain.then(()=>filter("sketch-one")(fullPath)).then(source => album.data.push({name:path.basename(file,path.extname(file)), source}))
     chain = chain.then(()=>filter("sketch-two")(fullPath)).then(source => album.data.push({name:path.basename(file,path.extname(file)), source}))
-    chain = chain.then(()=>filter("sketch-three")(fullPath)).then(source => album.data.push({name:path.basename(file,path.extname(file)), source}))
-
+    chain = chain.then(()=>filter("detailed-sketch")(fullPath)).then(source => album.data.push({name:path.basename(file,path.extname(file)), source}))
     chain = chain.then(()=>filter("three-shades")(fullPath)).then(source => album.data.push({name:path.basename(file,path.extname(file)), source}))
     chain = chain.then(()=>filter("five-shades")(fullPath)).then(source => album.data.push({name:path.basename(file,path.extname(file)), source}))
     chain = chain.then(()=>filter("seven-shades")(fullPath)).then(source => album.data.push({name:path.basename(file,path.extname(file)), source}))
-
     chain = chain.then(()=>filter("base-shadows")(fullPath)).then(source => album.data.push({name:path.basename(file,path.extname(file)), source}))
     chain = chain.then(()=>filter("dark-shadows")(fullPath)).then(source => album.data.push({name:path.basename(file,path.extname(file)), source}))
     chain = chain.then(()=>filter("light-shadows")(fullPath)).then(source => album.data.push({name:path.basename(file,path.extname(file)), source}))
