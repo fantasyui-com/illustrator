@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/fantasyui-com/illustrator#readme",
   "dependencies": {
-    "commander": "^2.20.1",
+    "commander": "^2.20.3",
     "gm": "^1.23.1",
     "make-dir": "^3.0.0",
     "tmp": "0.1.0"
