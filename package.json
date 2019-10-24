@@ -1,6 +1,6 @@
 {
   "name": "illustrator",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Command line tool to extract drawing information from a photo.",
   "main": "index.js",
   "bin": {
