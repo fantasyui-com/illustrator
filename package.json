@@ -25,7 +25,7 @@
   "dependencies": {
     "commander": "^2.20.3",
     "gm": "^1.23.1",
-    "make-dir": "^3.0.0",
+    "make-dir": "^4.0.0",
     "tmp": "0.1.0"
   }
 }
